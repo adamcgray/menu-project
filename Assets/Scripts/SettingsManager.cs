@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+    public GameObject self;
+    public GameObject mainMenu;
     public Dropdown skybox_selection;
     public Dropdown music_selection;
     public Slider music_volume;
     public AudioSource musicSource;
+    public Button button;
 
     public Material skyOne;
     public Material skyTwo;
@@ -17,7 +20,6 @@ public class SettingsManager : MonoBehaviour
     public AudioSource musicTrack1;
     public AudioSource musicTrack2;
     public AudioSource musicTrack3;
-
 
     public Resolution[] resolutions;
     private GameSettings game_settings;
@@ -29,6 +31,7 @@ public class SettingsManager : MonoBehaviour
         skybox_selection.onValueChanged.AddListener(delegate { OnSkyboxSelection(); });
         music_selection.onValueChanged.AddListener(delegate { OnMusicSelection(); });
         music_volume.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
+        button.onClick.AddListener(delegate { onButtonClick(); });
         resolutions = Screen.resolutions;
     }
 
@@ -81,5 +84,11 @@ public class SettingsManager : MonoBehaviour
     public void LoadSettings()
     {
 
+    }
+
+    public void onButtonClick()
+    {
+        Instantiate(mainMenu, self.transform.position, self.transform.rotation);
+        Destroy(self);
     }
 }
