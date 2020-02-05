@@ -10,6 +10,15 @@ public class SettingsManager : MonoBehaviour
     public Slider music_volume;
     public AudioSource musicSource;
 
+    public Material skyOne;
+    public Material skyTwo;
+    public Material skyThree;
+
+    public AudioSource musicTrack1;
+    public AudioSource musicTrack2;
+    public AudioSource musicTrack3;
+
+
     public Resolution[] resolutions;
     private GameSettings game_settings;
 
@@ -26,11 +35,37 @@ public class SettingsManager : MonoBehaviour
     public void OnSkyboxSelection()
     {
         game_settings.skybox_id = skybox_selection.value;
+        if (game_settings.skybox_id == 0)
+        {
+            RenderSettings.skybox = skyOne;
+        } else if (game_settings.skybox_id == 1)
+        {
+            RenderSettings.skybox = skyTwo;
+        } else if (game_settings.skybox_id == 2)
+        {
+            RenderSettings.skybox = skyThree;
+        }
     }
 
     public void OnMusicSelection()
     {
         game_settings.music_id = music_selection.value;
+        if (game_settings.music_id == 0)
+        {
+            musicSource.Stop();
+            musicSource = musicTrack1;
+            musicSource.Play();
+        } else if (game_settings.music_id == 1)
+        {
+            musicSource.Stop();
+            musicSource = musicTrack2;
+            musicSource.Play();
+        } else if (game_settings.music_id == 2)
+        {
+            musicSource.Stop();
+            musicSource = musicTrack3;
+            musicSource.Play();
+        }
     }
 
     public void OnMusicVolumeChange()
