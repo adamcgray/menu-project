@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Settings
+  - Main Menu
+  - SettingsButton
+  - ConfirmButton
   layers:
   - Default
   - TransparentFX

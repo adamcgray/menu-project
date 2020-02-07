@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public GameObject self;
-    public GameObject mainMenu;
+    public GameObject[] settings;
+    public GameObject[] mainMenus;
+    public GameObject[] confirmButtons;
+    public GameObject[] settingsButtons;
+    public GameObject main_menu_screen;
+    public GameObject settings_menu_screen;
     public Dropdown skybox_selection;
     public Dropdown music_selection;
     public Slider music_volume;
     public AudioSource musicSource;
-    public Button button;
+    public Button confirmButton;
+    public Button settingsButton;
 
     public Material skyOne;
     public Material skyTwo;
@@ -24,6 +29,22 @@ public class SettingsManager : MonoBehaviour
     public Resolution[] resolutions;
     private GameSettings game_settings;
 
+    void Update()
+    {
+        confirmButtons = GameObject.FindGameObjectsWithTag("ConfirmButton");
+        foreach (GameObject confirmButton in confirmButtons)
+        {
+            Button actualConfirmButton = confirmButton.GetComponent(typeof(Button)) as Button;
+            actualConfirmButton.onClick.AddListener(delegate { onButtonClick(); });
+        }
+        settingsButtons = GameObject.FindGameObjectsWithTag("SettingsButton");
+        foreach (GameObject settingsButton in settingsButtons)
+        {
+            Button actualSettingsButton = settingsButton.GetComponent(typeof(Button)) as Button;
+            actualSettingsButton.onClick.AddListener(delegate { onSettingsButtonClick(); });
+        }
+
+    }
     void OnEnable()
     {
         game_settings = new GameSettings();
@@ -31,7 +52,9 @@ public class SettingsManager : MonoBehaviour
         skybox_selection.onValueChanged.AddListener(delegate { OnSkyboxSelection(); });
         music_selection.onValueChanged.AddListener(delegate { OnMusicSelection(); });
         music_volume.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
-        button.onClick.AddListener(delegate { onButtonClick(); });
+        confirmButton.onClick.AddListener(delegate { onButtonClick(); });
+        settingsButton.onClick.AddListener(delegate { onSettingsButtonClick(); });
+
         resolutions = Screen.resolutions;
     }
 
@@ -88,7 +111,31 @@ public class SettingsManager : MonoBehaviour
 
     public void onButtonClick()
     {
-        Instantiate(mainMenu, self.transform.position, self.transform.rotation);
-        Destroy(self);
+        int counter = 0;
+        settings = GameObject.FindGameObjectsWithTag("Settings");
+        foreach (GameObject settings_menu in settings)
+        {
+            if (counter == 0)
+            {
+                Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
+                counter++;
+            }
+        Destroy(settings_menu_screen);
+        }
+    }
+
+    public void onSettingsButtonClick()
+    {
+        int counter2 = 0;
+        mainMenus = GameObject.FindGameObjectsWithTag("Main Menu");
+        foreach (GameObject main_menu in mainMenus)
+        {
+            if (counter2 == 0)
+            {
+                Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+                counter2++;
+            }
+        Destroy(main_menu_screen);
+        }
     }
 }
