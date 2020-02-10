@@ -28,6 +28,7 @@ public class SettingsManager : MonoBehaviour
     public Resolution[] resolutions;
     private GameSettings game_settings;
 
+    public GameObject player;
     private GameObject clone = null;
     private GameObject clone2 = null;
 
@@ -41,22 +42,34 @@ public class SettingsManager : MonoBehaviour
         //actualSettingsButton.onClick.AddListener(delegate { onSettingsButtonClick(); });
 
     //}
+    void Update()
+    {
+        //if (SteamVR._default.inActions.MenuClick.GetStateDown(inputSource))
+        //{
+            //GameObject checkMenu = GameObject.FindWithTag("Main Menu");
+            //Destroy(checkMenu);
+            //GameObject checkSettings = GameObject.FindWithTag("Settings");
+            //Destroy(checkSettings);
+            //Instantiate(main_menu_screen, player.transform.position, player.transform.rotation);// the menu button on the controller
+        //}
+    }
+
     void OnEnable()
     {
         game_settings = new GameSettings();
 
-        skybox_selection.onValueChanged.AddListener(delegate { OnSkyboxSelection(); });
-        music_selection.onValueChanged.AddListener(delegate { OnMusicSelection(); });
-        music_volume.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
+        //skybox_selection.onValueChanged.AddListener(delegate { OnSkyboxSelection(); });
+        //music_selection.onValueChanged.AddListener(delegate { OnMusicSelection(); });
+        //music_volume.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
         //confirmButton.onClick.AddListener(delegate { onButtonClick(); });
         //settingsButton.onClick.AddListener(delegate { onSettingsButtonClick(); });
 
         resolutions = Screen.resolutions;
     }
 
-    public void OnSkyboxSelection()
+    public void OnSkyboxSelection(int skybox)
     {
-        game_settings.skybox_id = skybox_selection.value;
+        game_settings.skybox_id = skybox;
         if (game_settings.skybox_id == 0)
         {
             RenderSettings.skybox = skyOne;
@@ -69,9 +82,9 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public void OnMusicSelection()
+    public void OnMusicSelection(int music)
     {
-        game_settings.music_id = music_selection.value;
+        game_settings.music_id = music;
         if (game_settings.music_id == 0)
         {
             musicSource.Stop();
@@ -90,9 +103,9 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    public void OnMusicVolumeChange()
+    public void OnMusicVolumeChange(float volume)
     {
-        musicSource.volume = game_settings.music_volume = music_volume.value;
+        musicSource.volume = game_settings.music_volume = volume;
     }
 
     public void SaveSettings()

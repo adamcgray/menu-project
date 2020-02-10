@@ -8,6 +8,7 @@ TagManager:
   - Main Menu
   - SettingsButton
   - ConfirmButton
+  - Skybox
   layers:
   - Default
   - TransparentFX
