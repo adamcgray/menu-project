@@ -1073,6 +1073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa582f0419c8a840bcfdb9e40119ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: []
+  mainMenus: []
+  confirmButtons: []
+  settingsButtons: []
   main_menu_screen: {fileID: 7649118294550905214, guid: 27f04a133b84e7c40b6533cad9b61623,
     type: 3}
   settings_menu_screen: {fileID: 3519973211064147192, guid: dbd41208d78f35448aff13ae8ed33ede,
@@ -2157,6 +2161,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 447981800138587645, guid: dbd41208d78f35448aff13ae8ed33ede,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 447981800138587645, guid: dbd41208d78f35448aff13ae8ed33ede,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447981800138587645, guid: dbd41208d78f35448aff13ae8ed33ede,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447981800138587645, guid: dbd41208d78f35448aff13ae8ed33ede,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 447981800138587645, guid: dbd41208d78f35448aff13ae8ed33ede,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3519973209543319131, guid: dbd41208d78f35448aff13ae8ed33ede,
         type: 3}
       propertyPath: m_AnchorMin.y
