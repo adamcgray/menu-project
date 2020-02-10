@@ -8,4 +8,5 @@ public class GameSettings : MonoBehaviour
     public int skybox_id;
     public int music_id;
     public AudioSource music_source;
+    public GameObject current_menu;
 }

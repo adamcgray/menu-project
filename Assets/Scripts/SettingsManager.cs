@@ -112,30 +112,41 @@ public class SettingsManager : MonoBehaviour
     public void onButtonClick()
     {
         int counter = 0;
+        GameObject clone = null;
         settings = GameObject.FindGameObjectsWithTag("Settings");
         foreach (GameObject settings_menu in settings)
         {
-            if (counter == 0)
+            if (clone != null)
             {
-                Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
+
+            }
+            else
+            {
+                clone = (GameObject) Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
+                game_settings.current_menu = clone;
                 counter++;
             }
-        Destroy(settings_menu_screen);
+        Destroy(settings_menu);
         }
     }
 
     public void onSettingsButtonClick()
     {
         int counter2 = 0;
+        GameObject clone = null;
         mainMenus = GameObject.FindGameObjectsWithTag("Main Menu");
         foreach (GameObject main_menu in mainMenus)
         {
-            if (counter2 == 0)
+            if (clone != null)
             {
-                Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+
+            } else
+            {
+                clone = (GameObject) Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+                game_settings.current_menu = clone;
                 counter2++;
             }
-        Destroy(main_menu_screen);
+        Destroy(main_menu);
         }
     }
 }
