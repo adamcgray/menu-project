@@ -69,14 +69,14 @@ public class SettingsManager : MonoBehaviour
 
     public void OnSkyboxSelection(int skybox)
     {
-        game_settings.skybox_id = skybox;
-        if (game_settings.skybox_id == 0)
+        //game_settings.skybox_id = skybox;
+        if (skybox == 0)
         {
             RenderSettings.skybox = skyOne;
-        } else if (game_settings.skybox_id == 1)
+        } else if (skybox == 1)
         {
             RenderSettings.skybox = skyTwo;
-        } else if (game_settings.skybox_id == 2)
+        } else if (skybox == 2)
         {
             RenderSettings.skybox = skyThree;
         }
@@ -84,18 +84,18 @@ public class SettingsManager : MonoBehaviour
 
     public void OnMusicSelection(int music)
     {
-        game_settings.music_id = music;
-        if (game_settings.music_id == 0)
+        //game_settings.music_id = music;
+        if (music == 0)
         {
             musicSource.Stop();
             musicSource = musicTrack1;
             musicSource.Play();
-        } else if (game_settings.music_id == 1)
+        } else if (music == 1)
         {
             musicSource.Stop();
             musicSource = musicTrack2;
             musicSource.Play();
-        } else if (game_settings.music_id == 2)
+        } else if (music == 2)
         {
             musicSource.Stop();
             musicSource = musicTrack3;
@@ -105,7 +105,7 @@ public class SettingsManager : MonoBehaviour
 
     public void OnMusicVolumeChange(float volume)
     {
-        musicSource.volume = game_settings.music_volume = volume;
+        musicSource.volume = volume;
     }
 
     public void SaveSettings()
