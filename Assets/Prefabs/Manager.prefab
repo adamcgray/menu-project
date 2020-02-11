@@ -170,7 +170,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8aa44c0bd4cff574ba36309dfd009b6e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.39
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   skybox_selection: {fileID: 0}
   music_selection: {fileID: 0}
   music_volume: {fileID: 0}
-  musicSource: {fileID: 4195010059627658673}
+  musicSource: {fileID: 4195010059187601490}
   confirmButton: {fileID: 0}
   settingsButton: {fileID: 0}
   skyOne: {fileID: 2100000, guid: c8e304140c860744783e1aa250535791, type: 2}
@@ -318,6 +318,7 @@ MonoBehaviour:
   musicTrack1: {fileID: 4195010059627658673}
   musicTrack2: {fileID: 4195010058532540701}
   musicTrack3: {fileID: 4195010059187601490}
+  player: {fileID: 0}
 --- !u!1 &4195010059627658670
 GameObject:
   m_ObjectHideFlags: 0

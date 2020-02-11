@@ -108,8 +108,12 @@ public class SettingsManager : MonoBehaviour
         musicSource.volume = volume;
     }
 
-    public void SaveSettings()
+    public void Exit()
     {
+        GameObject checkSettings = GameObject.FindWithTag("Settings");
+        Destroy(checkSettings);
+        GameObject checkMenu = GameObject.FindWithTag("Main Menu");
+        Destroy(checkMenu);
 
     }
 
