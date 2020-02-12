@@ -264,6 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4195010059196696321}
   - component: {fileID: 4195010059196696446}
+  - component: {fileID: -1046728860473030537}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -319,6 +320,32 @@ MonoBehaviour:
   musicTrack2: {fileID: 4195010058532540701}
   musicTrack3: {fileID: 4195010059187601490}
   player: {fileID: 0}
+--- !u!114 &-1046728860473030537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4195010059196696447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74db1044d616d84681013ab65a32112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSelection: {fileID: 3707679353844848927, guid: d93518bffc635fa43843a535a14fba04,
+    type: 3}
+  weaponSelection: {fileID: 5940587249376642722, guid: 6acb2bb0b51bb004fab2fffaa9431261,
+    type: 3}
+  tree: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+  house: {fileID: 1000013289884710, guid: f0cf8146888c5ba4ebd406d6a76baeb7, type: 3}
+  skyScraper: {fileID: 100000, guid: a7d0bc61e3f0d0649b8c808d0f478b17, type: 3}
+  spear: {fileID: 100000, guid: f2da8aaf9cb670b41b2133344c52c481, type: 3}
+  sword: {fileID: 100000, guid: 3f6f5cc41e1179f4d81c25bfd5bf78eb, type: 3}
+  cleaver: {fileID: 100000, guid: fe554a8074a28304c997646e97bae0bd, type: 3}
+  menuScreen: {fileID: 7649118294550905214, guid: 27f04a133b84e7c40b6533cad9b61623,
+    type: 3}
+  selectedObject: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+  selectedWeapon: {fileID: 100000, guid: f2da8aaf9cb670b41b2133344c52c481, type: 3}
 --- !u!1 &4195010059627658670
 GameObject:
   m_ObjectHideFlags: 0
