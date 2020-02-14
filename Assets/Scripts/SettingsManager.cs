@@ -124,34 +124,34 @@ public class SettingsManager : MonoBehaviour
 
     public void onButtonClick()
     {
-        settings = GameObject.FindWithTag("Settings");
-        GameObject checkMenu = GameObject.FindWithTag("Main Menu");
-        if (checkMenu != null) {
-            Destroy(checkMenu);
-            Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
-            Destroy(settings);
-        }
-        else {
-            Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
-        }
+        //settings = GameObject.FindWithTag("Settings");
+        //GameObject checkMenu = GameObject.FindWithTag("Main Menu");
+        //if (checkMenu != null) {
+            //Destroy(checkMenu);
+            //Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
+            //Destroy(settings);
+        //}
+        //else {
+            //Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
+        //}
         //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
-        Destroy(settings);
+        //Destroy(settings);
     }
 
     public void onSettingsButtonClick()
     {
-        mainMenu = GameObject.FindWithTag("Main Menu");
-        GameObject checkSettings = GameObject.FindWithTag("Settings");
-        if (checkSettings != null)
-        {
-            Destroy(checkSettings);
-            Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
-            Destroy(mainMenu);
-        } else {
-            Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
-        }
+        //mainMenu = GameObject.FindWithTag("Main Menu");
+        //GameObject checkSettings = GameObject.FindWithTag("Settings");
+        //if (checkSettings != null)
+        //{
+            //Destroy(checkSettings);
+            //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+            //Destroy(mainMenu);
+        //} else {
+            //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+        //}
         //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
-        Destroy(mainMenu);
+        //Destroy(mainMenu);
 
     }
 }

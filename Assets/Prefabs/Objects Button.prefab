@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 697915779645667801}
   - component: {fileID: 697915779645667800}
   - component: {fileID: 697915779645667803}
+  - component: {fileID: 4879263987113138186}
   m_Layer: 5
   m_Name: Objects Button
   m_TagString: Untagged
@@ -207,3 +208,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4879263987113138186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697915779645667805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3578a31cb83e25a4e8e04adff3e7b3bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSelection: {fileID: 3707679353844848927, guid: d93518bffc635fa43843a535a14fba04,
+    type: 3}
+  tree: {fileID: 192044, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+  house: {fileID: 1000013289884710, guid: f0cf8146888c5ba4ebd406d6a76baeb7, type: 3}
+  skyScraper: {fileID: 100000, guid: a7d0bc61e3f0d0649b8c808d0f478b17, type: 3}
+  spear: {fileID: 0}
+  sword: {fileID: 0}
+  cleaver: {fileID: 0}
+  menuScreen: {fileID: 7649118294550905214, guid: 27f04a133b84e7c40b6533cad9b61623,
+    type: 3}
+  selectedObject: {fileID: 0}
+  selectedWeapon: {fileID: 0}
+  player: {fileID: 3370910222993013436, guid: 8c1fad3a5ef04f34196fecb25eacdca1, type: 3}

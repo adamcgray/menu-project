@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 4090396641058079096}
   - component: {fileID: 4090396641058079079}
   - component: {fileID: 4090396641058079078}
+  - component: {fileID: -3140157955545703475}
   m_Layer: 5
   m_Name: Confirm Button
   m_TagString: ConfirmButton
@@ -114,7 +115,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 5.400009, y: -4.775009}
-  m_SizeDelta: {x: 160, y: 41.6}
+  m_SizeDelta: {x: 90, y: 41.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4090396641058079096
 CanvasRenderer:
@@ -207,3 +208,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-3140157955545703475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4090396641058079076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b97770a5030724189ca3a632a95668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 0}
+  mainMenu: {fileID: 0}
+  main_menu_screen: {fileID: 7649118294550905214, guid: 27f04a133b84e7c40b6533cad9b61623,
+    type: 3}
+  settings_menu_screen: {fileID: 3519973211064147192, guid: dbd41208d78f35448aff13ae8ed33ede,
+    type: 3}
