@@ -134,7 +134,7 @@ public class SettingsManager : MonoBehaviour
         else {
             Instantiate(main_menu_screen, settings_menu_screen.transform.position, settings_menu_screen.transform.rotation);
         }
-        Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+        //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
         Destroy(settings);
     }
 
@@ -150,7 +150,7 @@ public class SettingsManager : MonoBehaviour
         } else {
             Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
         }
-        Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
+        //Instantiate(settings_menu_screen, main_menu_screen.transform.position, main_menu_screen.transform.rotation);
         Destroy(mainMenu);
 
     }
