@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Valve.VR.Extras;
 using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+    public SteamVR_LaserPointer laserPointer;
 
     public float smooth = 1f;
     // Game object
@@ -36,6 +39,23 @@ public class UiManager : MonoBehaviour
     private GameObject selectedWeapon;
 
     private Vector3 targetAngles;
+
+    void Awake()
+    {
+        laserPointer.PointerClick += PointerClick;
+    }
+
+    public void PointerClick(object sender, PointerEventArgs e)
+    {
+        if (e.target.name == "Cube")
+        {
+            Debug.Log("Cube was clicked");
+        }
+        else if (e.target.name == "Button")
+        {
+            Debug.Log("Button was clicked");
+        }
+    }
 
     void Start()
     {
