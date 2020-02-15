@@ -38,7 +38,8 @@ public class UiManager : MonoBehaviour
     private GameObject selectedObject;
     private GameObject selectedWeapon;
 
-    private Vector3 targetAngles;
+    private bool rotatingToMain = false;
+    private bool rotatingToSettings = false;
 
     void Awake()
     {
@@ -72,7 +73,21 @@ public class UiManager : MonoBehaviour
 
     void Update()
     {
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
+        if (rotatingToSettings)
+        {
+            Vector3 currentRotation = transform.eulerAngles;
+            currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y - 180f, Time.deltaTime * smooth);
+            transform.eulerAngles = currentRotation;
+            rotatingToSettings = false;
+        }
+        if (rotatingToMain)
+        {
+            Vector3 currentRotation = transform.eulerAngles;
+            currentRotation = transform.eulerAngles;
+            currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y + 180f, Time.deltaTime * smooth);
+            transform.eulerAngles = currentRotation;
+            rotatingToMain = false;
+        }
     }
 
     public void OnSkyboxSelection(int skybox)
@@ -158,12 +173,17 @@ public class UiManager : MonoBehaviour
 
     public void onConfirmClick()
     {
-
-        targetAngles = transform.eulerAngles + -180f * Vector3.up;
+        if (!rotatingToMain && !rotatingToSettings)
+        {
+            rotatingToSettings = true;
+        }
     }
 
     public void onSettingsButtonClick()
     {
-        targetAngles = transform.eulerAngles + 180f * Vector3.up; // what the new angles should be
+        if (!rotatingToMain && !rotatingToSettings)
+        {
+            rotatingToMain = true;
+        }
     }
 }
