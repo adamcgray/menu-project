@@ -9,6 +9,8 @@ TagManager:
   - SettingsButton
   - ConfirmButton
   - Skybox
+  - WeaponsButton
+  - ObjectsButton
   layers:
   - Default
   - TransparentFX

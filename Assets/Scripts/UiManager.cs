@@ -47,13 +47,18 @@ public class UiManager : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (e.target.name == "Cube")
+        if (e.target.tag == "SettingsButton")
         {
-            Debug.Log("Cube was clicked");
-        }
-        else if (e.target.name == "Button")
+            onSettingsButtonClick();
+        } else if (e.target.tag == "ConfirmButton")
         {
-            Debug.Log("Button was clicked");
+            onConfirmClick();
+        } else if (e.target.tag == "WeaponsButton")
+        {
+            OnCreateWeaponClick();
+        } else if (e.target.tag == "ObjectsButton")
+        {
+            OnCreateObjectClick();
         }
     }
 
