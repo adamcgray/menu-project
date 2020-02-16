@@ -38,9 +38,6 @@ public class UiManager : MonoBehaviour
     private GameObject selectedObject;
     private GameObject selectedWeapon;
 
-    private bool rotatingToMain = false;
-    private bool rotatingToSettings = false;
-
     void Awake()
     {
         laserPointer.PointerClick += PointerClick;
@@ -48,16 +45,16 @@ public class UiManager : MonoBehaviour
 
     public void PointerClick(object sender, PointerEventArgs e)
     {
-        if (e.target.tag == "SettingsButton")
+        if (e.target.name == "SettingsButton")
         {
             onSettingsButtonClick();
-        } else if (e.target.tag == "ConfirmButton")
+        } else if (e.target.name == "ConfirmButton")
         {
             onConfirmClick();
-        } else if (e.target.tag == "WeaponsButton")
+        } else if (e.target.name == "WeaponsButton")
         {
             OnCreateWeaponClick();
-        } else if (e.target.tag == "ObjectsButton")
+        } else if (e.target.name == "ObjectsButton")
         {
             OnCreateObjectClick();
         }
@@ -73,21 +70,6 @@ public class UiManager : MonoBehaviour
 
     void Update()
     {
-        if (rotatingToSettings)
-        {
-            Vector3 currentRotation = transform.eulerAngles;
-            currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y - 180f, Time.deltaTime * smooth);
-            transform.eulerAngles = currentRotation;
-            rotatingToSettings = false;
-        }
-        if (rotatingToMain)
-        {
-            Vector3 currentRotation = transform.eulerAngles;
-            currentRotation = transform.eulerAngles;
-            currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y + 180f, Time.deltaTime * smooth);
-            transform.eulerAngles = currentRotation;
-            rotatingToMain = false;
-        }
     }
 
     public void OnSkyboxSelection(int skybox)
@@ -173,17 +155,19 @@ public class UiManager : MonoBehaviour
 
     public void onConfirmClick()
     {
-        if (!rotatingToMain && !rotatingToSettings)
-        {
-            rotatingToSettings = true;
-        }
+        Vector3 currentRotation = transform.eulerAngles;
+        currentRotation = transform.eulerAngles;
+        currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y + 180f, Time.deltaTime * smooth);
+        transform.eulerAngles = currentRotation;
     }
 
     public void onSettingsButtonClick()
     {
-        if (!rotatingToMain && !rotatingToSettings)
         {
-            rotatingToMain = true;
+            Vector3 currentRotation = transform.eulerAngles;
+            currentRotation = transform.eulerAngles;
+            currentRotation.y = Mathf.Lerp(currentRotation.y, currentRotation.y -180f, Time.deltaTime * smooth);
+            transform.eulerAngles = currentRotation;
         }
     }
 }
